@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
+import Education from './components/Education';
 import Projects from './components/Projects';
 import EcommerceExpertise from './components/EcommerceExpertise';
 import Impact from './components/Impact';
@@ -26,6 +27,7 @@ function PortfolioContent() {
         <About />
         <Skills />
         <Experience />
+        <Education />
         <Projects />
         <EcommerceExpertise />
         <Impact />

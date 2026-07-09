@@ -31,36 +31,16 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: 'Fresh Cart',
-    tag: 'Training Project',
-    description: 'Built a full-stack MERN e-commerce application solo in 6 weeks, including test coverage with Jest.',
-    achievements: [
-      'Ranked #1 among 4 fresher UI developers',
-      'Earned direct assignment to a real-world enterprise client project',
-    ],
-    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Jest'],
-  },
-  {
-    name: 'Allen Brothers',
+    name: 'VSO Inc.',
+    tag: 'Ongoing — Sole Developer',
     description:
-      'Designed and built homepage banners, product cards, PDP UI, quick-view sidebars, and hover-based image magnification for product pages on a live enterprise engagement.',
+      'Leading a ground-up rebuild of the parent company\'s corporate website on the same Astro/GCP stack, replacing legacy WordPress with a modern, redesigned UI tailored to a compliance-focused enterprise audience, while carrying forward the proven SEO foundation.',
     achievements: [
-      'First fresher in the company assigned to a client project',
-      'Delivered pixel-perfect UI, earning appreciation from senior developers and the client',
-      'Selected for major module ownership on the next project (BrandsMart USA)',
+      'Selected to rebuild a second, independent client property entirely from scratch',
+      'Entrusted with both technical execution and design direction, based on FogLifter\'s outcome',
     ],
-    tech: ['React.js', 'JavaScript', 'HTML', 'CSS'],
-  },
-  {
-    name: 'BrandsMart USA',
-    description:
-      'Owned the Account module (14 pages) end-to-end and led the Checkout module, engineering a dynamic multi-step checkout (shipping-type dependent) with full back-and-edit navigation, plus order confirmation and cart save-for-later/summary sections. Partnered directly with design, QA, and API teams; improved site accessibility; shipped dynamic support-call UI based on business hours. Contributed to code architecture — API response aggregation, reusable CSS variables, and a custom internal npm library sharing context across Account, Checkout, Browse, and Shop modules. Delivered 800+ stories, resolved ~300 defects, ensured full cross-browser support.',
-    achievements: [
-      'Awarded Spot Award — ranked #1 among 8+ senior developers',
-      'One of 3 developers promoted to a billing role',
-      'Assigned 2 additional projects directly by the CFO, based on ownership and delivery track record',
-    ],
-    tech: ['React.js', 'Next.js'],
+    tech: ['Astro', 'GCP'],
+    ongoing: true,
   },
   {
     name: 'FogLifter',
@@ -74,16 +54,36 @@ const projects: Project[] = [
     tech: ['Astro', 'HTML', 'CSS'],
   },
   {
-    name: 'VSO Inc.',
-    tag: 'Ongoing — Sole Developer',
+    name: 'BrandsMart USA',
     description:
-      'Leading a ground-up rebuild of the parent company\'s corporate website on the same Astro/GCP stack, replacing legacy WordPress with a modern, redesigned UI tailored to a compliance-focused enterprise audience, while carrying forward the proven SEO foundation.',
+      'Owned the Account module (14 pages) end-to-end and led the Checkout module, engineering a dynamic multi-step checkout (shipping-type dependent) with full back-and-edit navigation, plus order confirmation and cart save-for-later/summary sections. Partnered directly with design, QA, and API teams; improved site accessibility; shipped dynamic support-call UI based on business hours. Contributed to code architecture — API response aggregation, reusable CSS variables, and a custom internal npm library sharing context across Account, Checkout, Browse, and Shop modules. Delivered 800+ stories, resolved ~300 defects, ensured full cross-browser support.',
     achievements: [
-      'Selected to rebuild a second, independent client property entirely from scratch',
-      'Entrusted with both technical execution and design direction, based on FogLifter\'s outcome',
+      'Awarded Spot Award — ranked #1 among 8+ senior developers',
+      'One of 3 developers promoted to a billing role',
+      'Assigned 2 additional projects directly by the CFO, based on ownership and delivery track record',
     ],
-    tech: ['Astro', 'GCP'],
-    ongoing: true,
+    tech: ['React.js', 'Next.js'],
+  },
+  {
+    name: 'Allen Brothers',
+    description:
+      'Designed and built homepage banners, product cards, PDP UI, quick-view sidebars, and hover-based image magnification for product pages on a live enterprise engagement.',
+    achievements: [
+      'First fresher in the company assigned to a client project',
+      'Delivered pixel-perfect UI, earning appreciation from senior developers and the client',
+      'Selected for major module ownership on the next project (BrandsMart USA)',
+    ],
+    tech: ['React.js', 'JavaScript', 'HTML', 'CSS'],
+  },
+  {
+    name: 'Fresh Cart',
+    tag: 'Training Project',
+    description: 'Built a full-stack MERN e-commerce application solo in 6 weeks, including test coverage with Jest.',
+    achievements: [
+      'Ranked #1 among 4 fresher UI developers',
+      'Earned direct assignment to a real-world enterprise client project',
+    ],
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Jest'],
   },
 ];
 
@@ -185,7 +185,7 @@ export default function Experience() {
                           </div>
 
                           {/* Project content */}
-                          <div className="rounded-xl p-4 bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors duration-300">
+                          <div className="rounded-xl p-4 bg-white/[0.02] border border-white/5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
                             {/* Name + tag */}
                             <div className="flex flex-wrap items-center gap-2 mb-2">
                               <h5 className="text-base font-bold text-white">{project.name}</h5>

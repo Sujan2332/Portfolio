@@ -40,7 +40,7 @@ export default function Contact() {
           <div className="flex flex-col gap-6 reveal-left">
             {/* Email card */}
             <a
-              href="mailto:saisujan.s03@gmail.com"
+              href="mailto:saisujans.dev@gmail.com"
               className="glass glass-hover spotlight-card rounded-2xl p-6 border border-white/5 hover:border-blue-500/20 transition-all duration-300 flex items-center gap-5 group cursor-hover"
             >
               <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -48,7 +48,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className="text-xs text-gray-500 uppercase tracking-widest mb-1">Email</div>
-                <div className="font-medium text-gray-200 group-hover:text-white transition-colors text-sm">saisujan.s03@gmail.com</div>
+                <div className="font-medium text-gray-200 group-hover:text-white transition-colors text-sm">saisujans.dev@gmail.com</div>
               </div>
             </a>
 

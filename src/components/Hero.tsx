@@ -284,7 +284,7 @@ export default function Hero() {
                 Resume
               </a>
               <a
-                href="mailto:saisujan.s03@gmail.com"
+                href="mailto:saisujans.dev@gmail.com"
                 className="flex items-center gap-2 px-5 py-2.5 glass border border-white/10 hover:border-white/20 text-gray-200 text-sm font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5"
               >
                 <Mail size={15} />
@@ -305,10 +305,10 @@ export default function Hero() {
               </a>
               <span className="w-px h-4 bg-white/10" />
               <a
-                href="mailto:saisujan.s03@gmail.com"
+                href="mailto:saisujans.dev@gmail.com"
                 className="text-gray-500 hover:text-gray-200 text-sm transition-colors"
               >
-                saisujan.s03@gmail.com
+                saisujans.dev@gmail.com
               </a>
             </div>
           </div>

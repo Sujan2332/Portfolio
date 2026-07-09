@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="mailto:saisujan.s03@gmail.com"
+              href="mailto:saisujans.dev@gmail.com"
               className="px-4 py-2 text-sm font-medium bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25"
             >
               Hire Me
@@ -105,7 +105,7 @@ export default function Navbar() {
             </button>
           ))}
           <a
-            href="mailto:saisujan.s03@gmail.com"
+            href="mailto:saisujans.dev@gmail.com"
             className="mt-2 px-3 py-2.5 text-sm font-medium bg-blue-600 text-white rounded-lg text-center"
           >
             Hire Me

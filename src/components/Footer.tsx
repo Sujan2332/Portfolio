@@ -53,7 +53,7 @@ export default function Footer() {
               <Github size={15} />
             </a>
             <a
-              href="mailto:saisujan.s03@gmail.com"
+              href="mailto:saisujans.dev@gmail.com"
               className="w-9 h-9 rounded-xl glass border border-white/5 hover:border-white/15 flex items-center justify-center text-gray-500 hover:text-gray-200 transition-all cursor-hover"
             >
               <Mail size={15} />

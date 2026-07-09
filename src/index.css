@@ -411,7 +411,7 @@
   background: rgba(5,5,8,0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  /* border-bottom: 1px solid var(--border-subtle); */
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 /* Hero grid bg */
@@ -452,6 +452,15 @@
 }
 .module-card-glow:hover {
   box-shadow: 0 0 30px rgba(59,130,246,0.15), 0 0 60px rgba(59,130,246,0.05);
+}
+
+/* Experience project card — soft neon border on hover */
+.project-card {
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.project-card:hover {
+  border-color: rgba(59,130,246,0.35);
+  box-shadow: 0 0 0 1px rgba(59,130,246,0.15), 0 0 24px rgba(59,130,246,0.12);
 }
 
 /* Contact form */

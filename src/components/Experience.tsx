@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Briefcase, ChevronDown, ChevronUp, ExternalLink, CheckCircle2, FolderGit2, Trophy, Star } from 'lucide-react';
+import { Briefcase, ChevronDown, ChevronUp, ExternalLink, CheckCircle2, FolderGit2, Trophy, Star } from 'lucide-react';
 
 const achievements = [
   { text: 'Ranked among top UI developers in the team for pixel-perfect implementation', highlight: true },
@@ -90,7 +91,12 @@ const projects: Project[] = [
 export default function Experience() {
   const [expanded, setExpanded] = useState(false);
   const [projectsExpanded, setProjectsExpanded] = useState(false);
+  const [projectsExpanded, setProjectsExpanded] = useState(false);
   const visible = expanded ? achievements : achievements.slice(0, 6);
+
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
+  const visibleProjects = projectsExpanded || !isMobile ? projects : projects.slice(0, 2);
+  const hiddenCount = projects.length - 2;
 
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
   const visibleProjects = projectsExpanded || !isMobile ? projects : projects.slice(0, 2);
@@ -270,6 +276,20 @@ export default function Experience() {
                     ))}
                   </div>
 
+                  {/* Expand toggle */}
+                  {achievements.length > 6 && (
+                    <button
+                      onClick={() => setExpanded(!expanded)}
+                      className="mt-4 flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                    >
+                      {expanded ? (
+                        <>Show less <ChevronUp size={14} /></>
+                      ) : (
+                        <>Show {achievements.length - 6} more achievements <ChevronDown size={14} /></>
+                      )}
+                    </button>
+                  )}
+                </div>
                   {/* Expand toggle */}
                   {achievements.length > 6 && (
                     <button

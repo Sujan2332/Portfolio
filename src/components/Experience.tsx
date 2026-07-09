@@ -284,34 +284,21 @@ export default function Experience() {
                     </button>
                   )}
                 </div>
-                  {/* Expand toggle */}
-                  {achievements.length > 6 && (
-                    <button
-                      onClick={() => setExpanded(!expanded)}
-                      className="mt-4 flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
-                    >
-                      {expanded ? (
-                        <>Show less <ChevronUp size={14} /></>
-                      ) : (
-                        <>Show {achievements.length - 6} more achievements <ChevronDown size={14} /></>
-                      )}
-                    </button>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            {/* Future / placeholder */}
-            <div className="mt-8 reveal">
-              <div
-                className="rounded-2xl p-6 border border-dashed border-white/5 text-center"
-                style={{ background: 'rgba(255,255,255,0.01)' }}
-              >
-                <div className="text-xs text-gray-600 font-mono tracking-widest uppercase">Next chapter loading...</div>
               </div>
             </div>
           </div>
+
+          {/* Future / placeholder */}
+          <div className="mt-8 reveal">
+            <div
+              className="rounded-2xl p-6 border border-dashed border-white/5 text-center"
+              style={{ background: 'rgba(255,255,255,0.01)' }}
+            >
+              <div className="text-xs text-gray-600 font-mono tracking-widest uppercase">Next chapter loading...</div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
   );
 }

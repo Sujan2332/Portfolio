@@ -13,6 +13,7 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { useReveal } from './hooks';
+import Education from './components/Education';
 
 function PortfolioContent() {
   useReveal();
@@ -26,6 +27,7 @@ function PortfolioContent() {
         <About />
         <Skills />
         <Experience />
+        <Education />
         <Projects />
         <EcommerceExpertise />
         <Impact />

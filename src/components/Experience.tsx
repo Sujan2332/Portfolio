@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Briefcase, ChevronDown, ChevronUp, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { Briefcase, ChevronDown, ChevronUp, ExternalLink, CheckCircle2, FolderGit2, Trophy, Star } from 'lucide-react';
 
 const achievements = [
   { text: 'Ranked among top UI developers in the team for pixel-perfect implementation', highlight: true },
@@ -18,11 +18,83 @@ const achievements = [
   { text: 'Ensured full ADA / WCAG 2.1 accessibility compliance across all modules', highlight: true },
 ];
 
-const techStack = ['React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Jest', 'REST APIs', 'TypeScript'];
+const techStack = ['React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Jest', 'REST APIs', 'Javascript', 'Astro', 'HTML', 'CSS', 'BootStrap CSS', 'Tailwind CSS', 'Git'];
+
+type Project = {
+  name: string;
+  tag?: string;
+  description: string;
+  achievements: string[];
+  tech: string[];
+  ongoing?: boolean;
+};
+
+const projects: Project[] = [
+  {
+    name: 'VSO Inc.',
+    tag: 'Ongoing — Sole Developer',
+    description:
+      'Leading a ground-up rebuild of the parent company\'s corporate website on the same Astro/GCP stack, replacing legacy WordPress with a modern, redesigned UI tailored to a compliance-focused enterprise audience, while carrying forward the proven SEO foundation.',
+    achievements: [
+      'Selected to rebuild a second, independent client property entirely from scratch',
+      'Entrusted with both technical execution and design direction, based on FogLifter\'s outcome',
+    ],
+    tech: ['Astro', 'GCP'],
+    ongoing: true,
+  },
+  {
+    name: 'FogLifter',
+    tag: 'Sole Developer',
+    description:
+      'Independently designed, built, and shipped a 60+ page marketing platform on Astro, owning architecture through deployment — including technical SEO (JSON-LD schema, sitemap.xml, robots.txt, llms.txt, manifest.json, full OG/Twitter metadata), reusable components, an interactive ROI calculator, and Core Web Vitals/SEO audits.',
+    achievements: [
+      'Received direct client appreciation for the delivered platform',
+      'Client trust in the build led to a second engagement on their parent company\'s website',
+    ],
+    tech: ['Astro', 'GCP', 'HTML', 'CSS', 'WordPress'],
+  },
+  {
+    name: 'BrandsMart USA',
+    description:
+      'Owned the Account module (14 pages) end-to-end and led the Checkout module, engineering a dynamic multi-step checkout (shipping-type dependent) with full back-and-edit navigation, plus order confirmation and cart save-for-later/summary sections. Partnered directly with design, QA, and API teams; improved site accessibility; shipped dynamic support-call UI based on business hours. Contributed to code architecture — API response aggregation, reusable CSS variables, and a custom internal npm library sharing context across Account, Checkout, Browse, and Shop modules. Delivered 800+ stories, resolved ~300 defects, ensured full cross-browser support.',
+    achievements: [
+      'Awarded Spot Award — ranked #1 among 8+ senior developers',
+      'One of 3 developers promoted to a billing role',
+      'Assigned 2 additional projects directly by the CFO, based on ownership and delivery track record',
+    ],
+    tech: ['React.js', 'Next.js'],
+  },
+  {
+    name: 'Allen Brothers',
+    description:
+      'Designed and built homepage banners, product cards, PDP UI, quick-view sidebars, and hover-based image magnification for product pages on a live enterprise engagement.',
+    achievements: [
+      'First fresher in the company assigned to a client project',
+      'Delivered pixel-perfect UI, earning appreciation from senior developers and the client',
+      'Selected for major module ownership on the next project (BrandsMart USA)',
+    ],
+    tech: ['React.js', 'JavaScript', 'HTML', 'CSS'],
+  },
+  {
+    name: 'Fresh Cart',
+    tag: 'Training Project',
+    description: 'Built a full-stack MERN e-commerce application solo in 6 weeks, including test coverage with Jest.',
+    achievements: [
+      'Ranked #1 among 4 fresher UI developers',
+      'Earned direct assignment to a real-world enterprise client project',
+    ],
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Jest'],
+  },
+];
 
 export default function Experience() {
   const [expanded, setExpanded] = useState(false);
+  const [projectsExpanded, setProjectsExpanded] = useState(false);
   const visible = expanded ? achievements : achievements.slice(0, 6);
+
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches;
+  const visibleProjects = projectsExpanded || !isMobile ? projects : projects.slice(0, 2);
+  const hiddenCount = projects.length - 2;
 
   return (
     <section id="experience" className="relative py-32 overflow-hidden">
@@ -52,7 +124,7 @@ export default function Experience() {
                 <div className="w-2 h-2 rounded-full bg-blue-500" />
               </div>
 
-              <div className="glass spotlight-card card-3d rounded-2xl p-6 md:p-8 border border-white/5 hover:border-blue-500/20 transition-all duration-300">
+              <div className="glass spotlight-card rounded-2xl p-6 md:p-8 border border-white/5 hover:border-blue-500/20 transition-all duration-300">
                 {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                   <div>
@@ -88,39 +160,130 @@ export default function Experience() {
                   ))}
                 </div>
 
-                {/* Achievements */}
-                <div className="space-y-3">
-                  {visible.map((ach, i) => (
-                    <div
-                      key={i}
-                      className={`flex items-start gap-3 p-3 rounded-xl transition-colors ${
-                        ach.highlight ? 'bg-blue-500/5 border border-blue-500/10' : 'hover:bg-white/2'
-                      }`}
-                    >
-                      <CheckCircle2
-                        size={15}
-                        className={`shrink-0 mt-0.5 ${ach.highlight ? 'text-blue-400' : 'text-gray-600'}`}
-                      />
-                      <span className={`text-sm leading-relaxed ${ach.highlight ? 'text-gray-200' : 'text-gray-400'}`}>
-                        {ach.text}
-                      </span>
+                {/* Projects subsection */}
+                <div className="mb-8">
+                  <div className="flex items-center gap-2 mb-5">
+                    <FolderGit2 size={15} className="text-blue-400" />
+                    <h4 className="text-sm font-semibold text-gray-300 uppercase tracking-widest">Projects</h4>
+                  </div>
+
+                  {/* Projects timeline */}
+                  <div className="relative ml-1">
+                    {/* Connecting line */}
+                    <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-blue-500/40 via-purple-500/30 to-transparent" />
+
+                    <div className="space-y-5">
+                      {visibleProjects.map((project, i) => (
+                        <div key={i} className="relative pl-7">
+                          {/* Node dot */}
+                          <div
+                            className={`absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full border-2 bg-[#0a0a0f] flex items-center justify-center ${project.ongoing ? 'border-green-500' : 'border-blue-500'
+                              }`}
+                          >
+                            <div className={`w-1.5 h-1.5 rounded-full ${project.ongoing ? 'bg-green-500' : 'bg-blue-500'}`} />
+                          </div>
+
+                          {/* Project content */}
+                          <div className="rounded-xl p-4  bg-white/[0.02] border border-white/5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
+                            {/* Name + tag */}
+                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                              <h5 className="text-base font-bold text-white">{project.name}</h5>
+                              {project.tag && (
+                                <span
+                                  className={`px-2 py-0.5 text-[0.65rem] font-medium rounded-full border ${project.ongoing
+                                    ? 'bg-green-500/10 border-green-500/20 text-green-400'
+                                    : 'bg-blue-500/10 border-blue-500/20 text-blue-300'
+                                    }`}
+                                >
+                                  {project.tag}
+                                </span>
+                              )}
+                            </div>
+
+                            {/* Description */}
+                            <p className="text-sm text-gray-400 leading-relaxed mb-3">{project.description}</p>
+
+                            {/* Project achievements */}
+                            <div className="space-y-1.5 mb-3">
+                              {project.achievements.map((ach, j) => (
+                                <div key={j} className="flex items-start gap-2">
+                                  <Trophy size={13} className="shrink-0 mt-0.5 text-amber-400/80" />
+                                  <span className="text-xs text-gray-300 leading-relaxed">{ach}</span>
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Tech chips */}
+                            <div className="flex flex-wrap gap-1.5">
+                              {project.tech.map((t) => (
+                                <span
+                                  key={t}
+                                  className="px-2 py-0.5 text-[0.65rem] font-medium text-blue-300 bg-blue-500/10 border border-blue-500/15 rounded-md"
+                                >
+                                  {t}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+
+                  {/* Mobile expand toggle */}
+                  {hiddenCount > 0 && (
+                    <button
+                      onClick={() => setProjectsExpanded(!projectsExpanded)}
+                      className="mt-4 flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors md:hidden"
+                    >
+                      {projectsExpanded ? (
+                        <>Show less <ChevronUp size={14} /></>
+                      ) : (
+                        <>Show {hiddenCount} more projects <ChevronDown size={14} /></>
+                      )}
+                    </button>
+                  )}
                 </div>
 
-                {/* Expand toggle */}
-                {achievements.length > 6 && (
-                  <button
-                    onClick={() => setExpanded(!expanded)}
-                    className="mt-4 flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
-                  >
-                    {expanded ? (
-                      <>Show less <ChevronUp size={14} /></>
-                    ) : (
-                      <>Show {achievements.length - 6} more achievements <ChevronDown size={14} /></>
-                    )}
-                  </button>
-                )}
+                {/* Achievements subsection */}
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <Star size={15} className="text-blue-400" />
+                    <h4 className="text-sm font-semibold text-gray-300 uppercase tracking-widest">Achievements</h4>
+                  </div>
+
+                  <div className="space-y-3">
+                    {visible.map((ach, i) => (
+                      <div
+                        key={i}
+                        className={`flex items-start gap-3 p-3 rounded-xl transition-colors ${ach.highlight ? 'bg-blue-500/5 border border-blue-500/10' : 'hover:bg-white/2'
+                          }`}
+                      >
+                        <CheckCircle2
+                          size={15}
+                          className={`shrink-0 mt-0.5 ${ach.highlight ? 'text-blue-400' : 'text-gray-600'}`}
+                        />
+                        <span className={`text-sm leading-relaxed ${ach.highlight ? 'text-gray-200' : 'text-gray-400'}`}>
+                          {ach.text}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Expand toggle */}
+                  {achievements.length > 6 && (
+                    <button
+                      onClick={() => setExpanded(!expanded)}
+                      className="mt-4 flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                    >
+                      {expanded ? (
+                        <>Show less <ChevronUp size={14} /></>
+                      ) : (
+                        <>Show {achievements.length - 6} more achievements <ChevronDown size={14} /></>
+                      )}
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
 

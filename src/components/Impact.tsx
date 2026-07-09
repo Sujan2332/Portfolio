@@ -3,7 +3,7 @@ import { TrendingUp, Bug, Zap, Building2 } from 'lucide-react';
 
 const impacts = [
   {
-    value: 1000,
+    value: 800,
     suffix: '+',
     label: 'User Stories',
     sub: 'Delivered in production',
@@ -30,7 +30,7 @@ const impacts = [
     gradient: 'from-cyan-600/15 to-transparent',
   },
   {
-    value: 1,
+    value: 4,
     suffix: '',
     label: 'Enterprise Project',
     sub: 'Live in production',

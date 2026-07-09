@@ -9,6 +9,7 @@ const skillCategories = [
       { name: 'Next.js', level: 85, color: '#ffffff' },
       { name: 'JavaScript', level: 88, color: '#F7DF1E' },
       { name: 'HTML5 & CSS3', level: 92, color: '#E34F26' },
+      { name: 'Astro', level: 90, color: '#7865F6' },
       { name: 'TypeScript', level: 75, color: '#3178C6' },
     ],
   },

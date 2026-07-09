@@ -43,7 +43,7 @@ const projects: Project[] = [
     ongoing: true,
   },
   {
-    name: 'FogLifter',
+    name: 'FogLifter®',
     tag: 'Sole Developer',
     description:
       'Independently designed, built, and shipped a 60+ page marketing platform on Astro, owning architecture through deployment — including technical SEO (JSON-LD schema, sitemap.xml, robots.txt, llms.txt, manifest.json, full OG/Twitter metadata), reusable components, an interactive ROI calculator, and Core Web Vitals/SEO audits.',
@@ -54,7 +54,8 @@ const projects: Project[] = [
     tech: ['Astro', 'GCP', 'HTML', 'CSS', 'WordPress'],
   },
   {
-    name: 'BrandsMart USA',
+    name: 'BrandsMartUSA®',
+    tag: 'Major Modules Ownerships',
     description:
       'Owned the Account module (14 pages) end-to-end and led the Checkout module, engineering a dynamic multi-step checkout (shipping-type dependent) with full back-and-edit navigation, plus order confirmation and cart save-for-later/summary sections. Partnered directly with design, QA, and API teams; improved site accessibility; shipped dynamic support-call UI based on business hours. Contributed to code architecture — API response aggregation, reusable CSS variables, and a custom internal npm library sharing context across Account, Checkout, Browse, and Shop modules. Delivered 800+ stories, resolved ~300 defects, ensured full cross-browser support.',
     achievements: [
@@ -65,7 +66,8 @@ const projects: Project[] = [
     tech: ['React.js', 'Next.js'],
   },
   {
-    name: 'Allen Brothers',
+    name: 'Allen Brothers Inc.',
+    tag: 'First Enterprise Project',
     description:
       'Designed and built homepage banners, product cards, PDP UI, quick-view sidebars, and hover-based image magnification for product pages on a live enterprise engagement.',
     achievements: [
@@ -133,10 +135,13 @@ export default function Experience() {
                         <Briefcase size={16} className="text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-white">Frontend Software Engineer</h3>
+                        <h3 className="text-lg font-bold text-white">Software Engineer</h3>
                         <div className="flex items-center gap-2 mt-0.5">
                           <span className="text-blue-400 font-medium text-sm">AIEnterprise Inc.</span>
-                          <ExternalLink size={12} className="text-gray-600" />
+                          <a href="https://www.aienterprise.com" target="_blank" rel="noopener noreferrer">
+
+                            <ExternalLink size={12} className="text-gray-600" />
+                          </a>
                         </div>
                       </div>
                     </div>

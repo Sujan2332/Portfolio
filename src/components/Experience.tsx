@@ -185,7 +185,7 @@ export default function Experience() {
                           </div>
 
                           {/* Project content */}
-                          <div className="rounded-xl p-4 bg-white/[0.02] border border-white/5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
+                          <div className="project-card rounded-xl p-4 bg-white/[0.02] border border-white/5">
                             {/* Name + tag */}
                             <div className="flex flex-wrap items-center gap-2 mb-2">
                               <h5 className="text-base font-bold text-white">{project.name}</h5>

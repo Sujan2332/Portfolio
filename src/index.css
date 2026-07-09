@@ -454,6 +454,15 @@
   box-shadow: 0 0 30px rgba(59,130,246,0.15), 0 0 60px rgba(59,130,246,0.05);
 }
 
+/* Experience project card — soft neon border on hover */
+.project-card {
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.project-card:hover {
+  border-color: rgba(59,130,246,0.35);
+  box-shadow: 0 0 0 1px rgba(59,130,246,0.15), 0 0 24px rgba(59,130,246,0.12);
+}
+
 /* Contact form */
 .form-input {
   background: rgba(255,255,255,0.03);

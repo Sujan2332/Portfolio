@@ -1,0 +1,22 @@
+# Sai Sujan S
+
+## About
+Sai Sujan S is a full-stack developer focused on building fast, accessible, and conversion-driven web experiences for startups, brands, and e-commerce products.
+
+## Skills
+- React.js
+- Next.js
+- Node.js
+- TypeScript
+- Tailwind CSS
+- MongoDB
+- E-commerce platforms
+
+## Experience Highlights
+- Built and shipped modern web applications with performance and SEO in mind.
+- Specialized in scalable frontend architecture and polished user interfaces.
+- Delivered e-commerce solutions with strong product and conversion considerations.
+
+## Contact
+- Portfolio: https://sai-sujan-s-portfolio.onrender.com/
+- GitHub: https://github.com/sujan2332

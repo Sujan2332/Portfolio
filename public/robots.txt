@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /private/
+
+Sitemap: https://sai-sujan-s-portfolio.onrender.com/sitemap.xml
+Host: https://sai-sujan-s-portfolio.onrender.com

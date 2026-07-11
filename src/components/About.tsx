@@ -1,11 +1,12 @@
 import { useEffect, useRef } from 'react';
-import { Code2, ShoppingCart, Cpu, Users } from 'lucide-react';
+import { Code2, ShoppingCart, Cpu, Users, Building } from 'lucide-react';
 
 const stats = [
   { value: 1000, suffix: '+', label: 'User Stories Delivered', icon: Users },
   { value: 300, suffix: '+', label: 'Production Bugs Resolved', icon: Code2 },
   { value: 12, suffix: '+', label: 'Pages Built in 11 Days', icon: Cpu },
   { value: 1.5, suffix: '+ Yrs', label: 'Industry Experience', icon: ShoppingCart },
+  { value: 4, suffix: '', label: 'Enterprise Projects', icon: Building },
 ];
 
 const highlights = [
@@ -101,7 +102,7 @@ export default function About() {
         </div>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-20">
           {stats.map((stat, i) => {
             const Icon = stat.icon;
             return (

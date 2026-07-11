@@ -8,8 +8,8 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Projects from './components/Projects';
 import EcommerceExpertise from './components/EcommerceExpertise';
-import Impact from './components/Impact';
-import Testimonials from './components/Testimonials';
+// import Impact from './components/Impact';
+// import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { useReveal } from './hooks';
@@ -30,8 +30,8 @@ function PortfolioContent() {
         <Education />
         <Projects />
         <EcommerceExpertise />
-        <Impact />
-        <Testimonials />
+        {/* <Impact /> */}
+        {/* <Testimonials /> */}
         <Contact />
       </main>
       <Footer />

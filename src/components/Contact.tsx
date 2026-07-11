@@ -1,9 +1,23 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Mail, Github, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+// --- EmailJS config from environment ---
+// Add these to your .env file at the project root:
+// VITE_EMAILJS_SERVICE_ID=service_...
+// VITE_EMAILJS_TEMPLATE_ID=template_...
+// VITE_EMAILJS_PUBLIC_KEY=...
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
+const EMAILJS_CONFIG_READY = Boolean(
+  EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY
+);
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
@@ -12,11 +26,37 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    // Simulate async send
-    await new Promise((r) => setTimeout(r, 1500));
-    setStatus('success');
-    setForm({ name: '', email: '', subject: '', message: '' });
-    setTimeout(() => setStatus('idle'), 4000);
+    setErrorMsg('');
+
+    if (!EMAILJS_CONFIG_READY) {
+      setErrorMsg('Email service is not configured. Please add EmailJS settings to your .env file.');
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+      return;
+    }
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+
+      setStatus('success');
+      setForm({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setStatus('idle'), 4000);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setErrorMsg('Something went wrong. Please try again or email me directly.');
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
+    }
   };
 
   return (
@@ -145,6 +185,10 @@ export default function Contact() {
                 {status === 'idle' && <Send size={16} />}
                 {status === 'loading' ? 'Sending...' : status === 'success' ? 'Message sent!' : status === 'error' ? 'Try again' : 'Send Message'}
               </button>
+
+              {status === 'error' && errorMsg && (
+                <p className="text-red-400 text-xs mt-3 text-center">{errorMsg}</p>
+              )}
             </form>
           </div>
         </div>

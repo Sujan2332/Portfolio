@@ -138,8 +138,13 @@ export default function Experience() {
                         <h3 className="text-lg font-bold text-white">Software Engineer</h3>
                         <div className="flex items-center gap-2 mt-0.5">
                           <span className="text-blue-400 font-medium text-sm">AIEnterprise Inc.</span>
-                          <a href="https://www.aienterprise.com" target="_blank" rel="noopener noreferrer">
-
+                          <a
+                            href="https://www.aienterprise.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Visit AIEnterprise Inc. website"
+                            title="Visit AIEnterprise Inc. website"
+                          >
                             <ExternalLink size={12} className="text-gray-600" />
                           </a>
                         </div>

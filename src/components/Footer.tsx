@@ -48,12 +48,16 @@ export default function Footer() {
               href="https://github.com/sujan2332"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Sai Sujan's GitHub profile"
+              title="Visit GitHub"
               className="w-9 h-9 rounded-xl glass border border-white/5 hover:border-white/15 flex items-center justify-center text-gray-500 hover:text-gray-200 transition-all cursor-hover"
             >
               <Github size={15} />
             </a>
             <a
               href="mailto:saisujans.dev@gmail.com"
+              aria-label="Send an email to Sai Sujan"
+              title="Email Sai Sujan"
               className="w-9 h-9 rounded-xl glass border border-white/5 hover:border-white/15 flex items-center justify-center text-gray-500 hover:text-gray-200 transition-all cursor-hover"
             >
               <Mail size={15} />

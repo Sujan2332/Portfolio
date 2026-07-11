@@ -18,5 +18,9 @@ Sai Sujan S is a full-stack developer focused on building fast, accessible, and 
 - Delivered e-commerce solutions with strong product and conversion considerations.
 
 ## Contact
-- Portfolio: https://sai-sujan-s-portfolio.onrender.com/
-- GitHub: https://github.com/sujan2332
+- Portfolio: [Sai Sujan S Portfolio](https://sai-sujan-s-portfolio.onrender.com/)
+- GitHub: [sujan2332](https://github.com/sujan2332)
+
+## Useful Links
+- [Portfolio Homepage](https://sai-sujan-s-portfolio.onrender.com/)
+- [GitHub Profile](https://github.com/sujan2332)

@@ -102,7 +102,7 @@ export default function Experience() {
     <section id="experience" className="relative py-32 overflow-hidden">
       <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-purple-500/30 to-transparent" />
 
-      <div className="max-w-5xl mx-auto px-6 md:px-8">
+      <div className="mx-auto px-6 md:px-8">
         {/* Header */}
         <div className="text-center mb-20 reveal">
           <div className="section-label mb-4">Experience</div>

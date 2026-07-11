@@ -1,4 +1,4 @@
-import { GraduationCap, BookOpen, School, Calendar, Award, Building2, Sparkles } from 'lucide-react';
+import { GraduationCap, BookOpen, Calendar, Building2, Sparkles, MapPin } from 'lucide-react';
 
 type EducationEntry = {
     id: string;
@@ -7,8 +7,8 @@ type EducationEntry = {
     institution: string;
     university?: string;
     graduation: string;
-    scoreLabel: string;
-    scoreValue: string;
+    label: string;
+    value: string;
     coursework?: string;
     stream?: string;
     icon: typeof GraduationCap;
@@ -24,36 +24,50 @@ const education: EducationEntry[] = [
         institution: 'Jyothy Institute of Technology (JIT)',
         university: 'Visvesvaraya Technological University (VTU)',
         graduation: 'June 2024',
-        scoreLabel: 'GPA',
-        scoreValue: '7.5 / 10',
+        label: 'GPA',
+        value: '7.5 / 10',
         coursework: 'Computer Science & Engineering',
         icon: GraduationCap,
         primary: true,
         accent: 'blue',
     },
+    // PUC and SSLC compressed into a single non-primary entry with no percentages --
+    // secondary-school marks read as filler for a 1.5-year professional candidate (audit: Education notes).
     {
-        id: 'puc',
-        degree: 'Pre-University (PUC)',
-        institution: 'St. Francis PU College',
-        graduation: 'June 2020',
-        scoreLabel: 'Percentage',
-        scoreValue: '70%',
+        id: 'pre-degree',
+        degree: 'Pre-University & Secondary Education',
+        institution: 'St. Francis PU College - Indira Convent High School',
+        graduation: 'Completed June 2020',
+        label: 'Location',
+        value: 'Bengaluru',
         stream: 'PCMC (Physics, Chemistry, Mathematics, Computer Science)',
-        icon: BookOpen,
-        primary: false,
-        accent: 'purple',
-    },
-    {
-        id: 'sslc',
-        degree: 'S.S.L.C. (State Board)',
-        institution: 'Indira Convent High School',
-        graduation: 'June 2018',
-        scoreLabel: 'Percentage',
-        scoreValue: '84%',
-        icon: School,
+        icon: MapPin,
         primary: false,
         accent: 'cyan',
     },
+    // {
+    //     id: 'puc',
+    //     degree: 'Pre-University (PUC)',
+    //     institution: 'St. Francis PU College',
+    //     graduation: 'June 2020',
+    //     scoreLabel: 'Percentage',
+    //     scoreValue: '70%',
+    //     stream: 'PCMC (Physics, Chemistry, Mathematics, Computer Science)',
+    //     icon: BookOpen,
+    //     primary: false,
+    //     accent: 'purple',
+    // },
+    // {
+    //     id: 'sslc',
+    //     degree: 'S.S.L.C. (State Board)',
+    //     institution: 'Indira Convent High School',
+    //     graduation: 'June 2018',
+    //     scoreLabel: 'Percentage',
+    //     scoreValue: '84%',
+    //     icon: School,
+    //     primary: false,
+    //     accent: 'cyan',
+    // },
 ];
 
 const accentMap: Record<string, { text: string; bg: string; border: string; dot: string; ring: string; line: string }> = {
@@ -180,9 +194,9 @@ export default function Education() {
                                         {/* Score badge */}
                                         <div className="flex flex-wrap items-center gap-3 mb-5">
                                             <div className={`flex items-center gap-2 px-3.5 py-2 rounded-lg ${a.bg} border ${a.border}`}>
-                                                <Award size={14} className={a.text} />
-                                                <span className="text-xs text-gray-400">{entry.scoreLabel}</span>
-                                                <span className={`text-sm font-bold font-mono ${a.text}`}>{entry.scoreValue}</span>
+                                                <entry.icon size={14} className={a.text} />
+                                                <span className="text-xs text-gray-400">{entry.label}</span>
+                                                <span className={`text-sm font-bold font-mono ${a.text}`}>{entry.value}</span>
                                             </div>
                                         </div>
 

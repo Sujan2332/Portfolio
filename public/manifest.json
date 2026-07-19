@@ -1,8 +1,11 @@
 {
+  "id": "/",
   "name": "Sai Sujan S Portfolio",
   "short_name": "SaiSujan",
   "description": "Portfolio of Sai Sujan S, a full-stack developer specializing in modern web products and e-commerce experiences.",
   "start_url": "/",
+  "scope": "/",
+  "lang": "en-US",
   "display": "standalone",
   "background_color": "#050816",
   "theme_color": "#050816",

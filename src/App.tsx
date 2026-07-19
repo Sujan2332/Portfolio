@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import LoadingScreen from './components/LoadingScreen';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
@@ -40,12 +40,15 @@ function PortfolioContent() {
 }
 
 export default function App() {
-  const [loaded, setLoaded] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
 
   return (
     <>
-      {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
-      {loaded && <PortfolioContent />}
+      {/* Content mounts immediately so it is present in the initial HTML/DOM
+          for crawlers and doesn't get delayed behind an artificial timer,
+          which previously hurt LCP/INP and crawlability. */}
+      <PortfolioContent />
+      {showLoader && <LoadingScreen onComplete={() => setShowLoader(false)} />}
     </>
   );
 }

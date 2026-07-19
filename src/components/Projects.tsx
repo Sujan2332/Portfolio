@@ -250,7 +250,7 @@ export default function Projects() {
   const [modalProject, setModalProject] = useState<Project | null>(null);
 
   return (
-    <section id="projects" className="relative py-32 overflow-hidden">
+    <section id="projects" aria-label="Projects" className="relative py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/5 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8">

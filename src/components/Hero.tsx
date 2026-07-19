@@ -214,7 +214,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden hero-grid">
+    <section id="home" aria-label="Introduction" className="relative min-h-screen flex items-center overflow-hidden hero-grid">
       {/* Background effects */}
       <div className="absolute inset-0">
         <ParticleCanvas />
@@ -316,7 +316,7 @@ export default function Hero() {
           </div>
 
           {/* Right — workspace */}
-          <div className="relative h-[500px] lg:h-[600px]">
+          <div className="relative h-[500px] lg:h-[600px] hidden lg:block">
             <WorkspaceOrb />
           </div>
         </div>

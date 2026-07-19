@@ -81,7 +81,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
 export default function About() {
   return (
-    <section id="about" className="relative py-32 overflow-hidden">
+    <section id="about" aria-label="About" className="relative py-32 overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent via-blue-500/30 to-transparent" />
 

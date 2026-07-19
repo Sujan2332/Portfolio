@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type MouseEvent } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const navLinks = [
@@ -32,7 +32,8 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const handleNav = (href: string) => {
+  const handleNav = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
     setMobileOpen(false);
     const id = href.slice(1);
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -43,22 +44,26 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          <a
+            href="#home"
+            onClick={(e) => handleNav(e, '#home')}
+            aria-label="Sai Sujan S — back to top"
             className="relative group"
           >
             <span className="font-mono text-base font-bold text-gradient-blue tracking-wider" style={{ fontFamily: "'Fira Code', monospace" }}>SS</span>
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
-          </button>
+          </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-1" role="navigation" aria-label="Primary">
             {navLinks.map((link) => {
               const id = link.href.slice(1);
               return (
-                <button
+                <a
                   key={link.href}
-                  onClick={() => handleNav(link.href)}
+                  href={link.href}
+                  onClick={(e) => handleNav(e, link.href)}
+                  aria-current={active === id ? 'true' : undefined}
                   className={`px-4 py-2 text-sm rounded-lg transition-all duration-200 ${
                     active === id
                       ? 'text-blue-400 bg-blue-500/10'
@@ -66,7 +71,7 @@ export default function Navbar() {
                   }`}
                 >
                   {link.label}
-                </button>
+                </a>
               );
             })}
           </div>
@@ -94,15 +99,16 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div className={`md:hidden transition-all duration-300 ${mobileOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-        <div className="nav-glass border-t border-white/5 px-6 py-4 flex flex-col gap-1">
+        <div className="nav-glass border-t border-white/5 px-6 py-4 flex flex-col gap-1" role="navigation" aria-label="Mobile">
           {navLinks.map((link) => (
-            <button
+            <a
               key={link.href}
-              onClick={() => handleNav(link.href)}
+              href={link.href}
+              onClick={(e) => handleNav(e, link.href)}
               className="text-left px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
             >
               {link.label}
-            </button>
+            </a>
           ))}
           <a
             href="mailto:saisujans.dev@gmail.com"

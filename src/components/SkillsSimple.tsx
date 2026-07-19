@@ -107,7 +107,7 @@ export default function Skills() {
   const activeCat = skillCategories.find((c) => c.id === activeTab)!;
 
   return (
-    <section id="skills" className="relative py-32 overflow-hidden">
+    <section id="skills" aria-label="Skills" className="relative py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8">

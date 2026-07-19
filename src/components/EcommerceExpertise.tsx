@@ -15,7 +15,7 @@ const modules = [
 
 export default function EcommerceExpertise() {
   return (
-    <section className="relative py-32 overflow-hidden">
+    <section id="ecommerce" aria-label="E-Commerce Expertise" className="relative py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/5 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8">

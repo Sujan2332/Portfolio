@@ -99,7 +99,7 @@ export default function Experience() {
   const hiddenCount = projects.length - 2;
 
   return (
-    <section id="experience" className="relative py-32 overflow-hidden">
+    <section id="experience" aria-label="Experience" className="relative py-32 overflow-hidden">
       <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-purple-500/30 to-transparent" />
 
       <div className="mx-auto px-6 md:px-8">

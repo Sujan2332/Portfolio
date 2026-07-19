@@ -99,7 +99,7 @@ const accentMap: Record<string, { text: string; bg: string; border: string; dot:
 
 export default function Education() {
     return (
-        <section id="education" className="relative py-32 overflow-hidden">
+        <section id="education" aria-label="Education" className="relative py-32 overflow-hidden">
             <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-blue-500/30 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent pointer-events-none" />
 

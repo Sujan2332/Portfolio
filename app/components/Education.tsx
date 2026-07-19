@@ -1,0 +1,226 @@
+import { GraduationCap, BookOpen, Calendar, Building2, Sparkles, MapPin } from 'lucide-react';
+
+type EducationEntry = {
+    id: string;
+    degree: string;
+    field?: string;
+    institution: string;
+    university?: string;
+    graduation: string;
+    label: string;
+    value: string;
+    coursework?: string;
+    stream?: string;
+    icon: typeof GraduationCap;
+    primary: boolean;
+    accent: 'blue' | 'purple' | 'cyan';
+};
+
+const education: EducationEntry[] = [
+    {
+        id: 'be',
+        degree: 'Bachelor of Engineering (B.E.)',
+        field: 'Computer Science & Engineering',
+        institution: 'Jyothy Institute of Technology (JIT)',
+        university: 'Visvesvaraya Technological University (VTU)',
+        graduation: 'June 2024',
+        label: 'GPA',
+        value: '7.5 / 10',
+        coursework: 'Computer Science & Engineering',
+        icon: GraduationCap,
+        primary: true,
+        accent: 'blue',
+    },
+    // PUC and SSLC compressed into a single non-primary entry with no percentages --
+    // secondary-school marks read as filler for a 1.5-year professional candidate (audit: Education notes).
+    {
+        id: 'pre-degree',
+        degree: 'Pre-University & Secondary Education',
+        institution: 'St. Francis PU College - Indira Convent High School',
+        graduation: 'Completed June 2020',
+        label: 'Location',
+        value: 'Bengaluru',
+        stream: 'PCMC (Physics, Chemistry, Mathematics, Computer Science)',
+        icon: MapPin,
+        primary: false,
+        accent: 'cyan',
+    },
+    // {
+    //     id: 'puc',
+    //     degree: 'Pre-University (PUC)',
+    //     institution: 'St. Francis PU College',
+    //     graduation: 'June 2020',
+    //     scoreLabel: 'Percentage',
+    //     scoreValue: '70%',
+    //     stream: 'PCMC (Physics, Chemistry, Mathematics, Computer Science)',
+    //     icon: BookOpen,
+    //     primary: false,
+    //     accent: 'purple',
+    // },
+    // {
+    //     id: 'sslc',
+    //     degree: 'S.S.L.C. (State Board)',
+    //     institution: 'Indira Convent High School',
+    //     graduation: 'June 2018',
+    //     scoreLabel: 'Percentage',
+    //     scoreValue: '84%',
+    //     icon: School,
+    //     primary: false,
+    //     accent: 'cyan',
+    // },
+];
+
+const accentMap: Record<string, { text: string; bg: string; border: string; dot: string; ring: string; line: string }> = {
+    blue: {
+        text: 'text-blue-400',
+        bg: 'bg-blue-500/10',
+        border: 'border-blue-500/20',
+        dot: 'bg-blue-500',
+        ring: 'border-blue-500',
+        line: 'from-blue-500 to-blue-500/0',
+    },
+    purple: {
+        text: 'text-purple-400',
+        bg: 'bg-purple-500/10',
+        border: 'border-purple-500/20',
+        dot: 'bg-purple-500',
+        ring: 'border-purple-500',
+        line: 'from-purple-500 to-purple-500/0',
+    },
+    cyan: {
+        text: 'text-cyan-400',
+        bg: 'bg-cyan-500/10',
+        border: 'border-cyan-500/20',
+        dot: 'bg-cyan-500',
+        ring: 'border-cyan-500',
+        line: 'from-cyan-500 to-cyan-500/0',
+    },
+};
+
+export default function Education() {
+    return (
+        <section id="education" aria-label="Education" className="relative py-32 overflow-hidden">
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-blue-500/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-950/5 to-transparent pointer-events-none" />
+
+            <div className="max-w-5xl mx-auto px-6 md:px-8">
+                {/* Header */}
+                <div className="text-center mb-20 reveal">
+                    <div className="section-label mb-4">Education</div>
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gradient-hero" style={{ fontFamily: "'Syne', sans-serif" }}>
+                        Academic{' '}
+                        <em style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontWeight: 600 }}>journey</em>
+                    </h2>
+                    <p className="text-gray-400 mt-4 max-w-xl mx-auto" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+                        The foundations that shaped my{' '}
+                        <em style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '1.08em', color: '#93c5fd' }}>
+                            engineering
+                        </em>{' '}
+                        path.
+                    </p>
+                </div>
+
+                {/* Timeline */}
+                <div className="relative">
+                    {/* Vertical line */}
+                    <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px timeline-line" />
+
+                    <div className="pl-16 md:pl-24 space-y-6 md:space-y-8">
+                        {education.map((entry, i) => {
+                            const Icon = entry.icon;
+                            const a = accentMap[entry.accent];
+                            return (
+                                <div key={entry.id} className="reveal" data-delay={i * 120}>
+                                    {/* Timeline dot */}
+                                    {/* <div
+                                        className={`absolute w-5 h-5 rounded-full border-2 ${a.ring} bg-[#050508] flex items-center justify-center z-10`}
+                                        style={{ left: '1.375rem', top: '1.75rem' }}
+                                    >
+                                        <div className={`w-2 h-2 rounded-full ${a.dot}`} />
+                                    </div> */}
+
+                                    {/* Card */}
+                                    <div
+                                        className={`group relative glass rounded-2xl p-6 md:p-8 border border-white/5 transition-all duration-500 ease-out hover:-translate-y-1 hover:border-white/10 hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)] ${entry.primary ? 'overflow-hidden' : ''
+                                            }`}
+                                    >
+                                        {/* Primary accent line (top) */}
+                                        {entry.primary && (
+                                            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500 via-purple-500/60 to-transparent" />
+                                        )}
+
+                                        {/* Header row */}
+                                        <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+                                            <div className="flex items-start gap-3.5">
+                                                <div
+                                                    className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${a.bg} border ${a.border} transition-transform duration-500 group-hover:scale-105`}
+                                                >
+                                                    <Icon size={18} className={a.text} />
+                                                </div>
+                                                <div>
+                                                    <h3 className="text-base md:text-lg font-bold text-white leading-tight">
+                                                        {entry.degree}
+                                                    </h3>
+                                                    {/* {entry.field && (
+                                                        <p className={`text-sm font-medium mt-1 ${a.text}`}>{entry.field}</p>
+                                                    )} */}
+                                                    <div className="flex items-center gap-3 mt-2 flex-wrap">
+                                                        <p className={`text-sm font-medium mt-1 ${a.text}`}>{entry.institution}</p>
+                                                        {entry.university && (
+                                                            <div className="flex items-center gap-1.5 mt-1">
+                                                                <Building2 size={11} className="text-gray-600" />
+                                                                <span className="text-xs text-gray-500">{entry.university}</span>
+                                                            </div>
+                                                        )}
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div className="flex flex-col items-end gap-2.5">
+                                                {entry.primary && (
+                                                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium">
+                                                        <Sparkles size={11} />
+                                                        Primary
+                                                    </div>
+                                                )}
+                                                <div className="flex items-center gap-1.5 font-mono text-xs text-gray-500">
+                                                    <Calendar size={11} />
+                                                    {entry.graduation}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Score badge */}
+                                        <div className="flex flex-wrap items-center gap-3 mb-5">
+                                            <div className={`flex items-center gap-2 px-3.5 py-2 rounded-lg ${a.bg} border ${a.border}`}>
+                                                <entry.icon size={14} className={a.text} />
+                                                <span className="text-xs text-gray-400">{entry.label}</span>
+                                                <span className={`text-sm font-bold font-mono ${a.text}`}>{entry.value}</span>
+                                            </div>
+                                        </div>
+
+                                        {/* Coursework / Stream */}
+                                        {(entry.coursework || entry.stream) && (
+                                            <div className="flex items-center gap-2.5 p-3.5 rounded-xl bg-white/[0.02] border border-white/5">
+                                                <BookOpen size={14} className="shrink-0 mt-0.5 text-gray-600" />
+                                                <div>
+                                                    <span className="text-[0.65rem] font-semibold text-gray-500 uppercase tracking-widest">
+                                                        {entry.coursework ? 'Coursework' : 'Stream'}
+                                                    </span>
+                                                    <p className="text-sm text-gray-300 mt-1 leading-relaxed">
+                                                        {entry.coursework || entry.stream}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}

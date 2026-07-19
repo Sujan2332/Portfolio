@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   keywords: [
+    'Sai',
+    'Sai Sujan',
+    'Sai Sujan S Portfolio',
     'Sai Sujan S',
     'full stack developer',
     'frontend developer',

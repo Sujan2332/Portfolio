@@ -1,36 +1,15 @@
 import type { MetadataRoute } from 'next';
 
 const SITE_URL = 'https://sai-sujan-s-portfolio.onrender.com';
-
-const explicitlyAllowedBots = [
-  'Googlebot',
-  'Googlebot-Image',
-  'Googlebot-News',
-  'Googlebot-Video',
-  'AdsBot-Google',
-  'Bingbot',
-  'Slurp',
-  'DuckDuckBot',
-  'Applebot',
-  'YandexBot',
-  'Baiduspider',
-  'facebookexternalhit',
-  'Twitterbot',
-  'LinkedInBot',
-];
+const DISALLOWED_PATHS = ['/api/', '/private/'];
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/private/'],
+        disallow: DISALLOWED_PATHS,
       },
-      ...explicitlyAllowedBots.map((userAgent) => ({
-        userAgent,
-        allow: '/',
-      })),
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
     host: SITE_URL,

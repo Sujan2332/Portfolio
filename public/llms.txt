@@ -1,26 +1,29 @@
 # Sai Sujan S
 
 ## About
-Sai Sujan S is a full-stack developer focused on building fast, accessible, and conversion-driven web experiences for startups, brands, and e-commerce products.
+Sai Sujan S is a Full-Stack Developer specializing in React.js, Next.js, and TypeScript, with production experience building enterprise e-commerce platforms (PDP, PLP, checkout, account systems) using Node.js, Express.js, and MongoDB, plus independent ownership of SEO-optimized, high-performance websites built with Astro.
 
 ## Skills
-- React.js
-- Next.js
-- Node.js
-- TypeScript
-- Tailwind CSS
-- MongoDB
-- E-commerce platforms
+- Frontend: React.js, Next.js, Astro, HTML5, CSS3, Tailwind CSS, Bootstrap
+- Languages: JavaScript (ES6+), TypeScript
+- Backend: Node.js, Express.js, REST APIs
+- Database: MongoDB
+- Other: SEO, Web Accessibility (WCAG), Core Web Vitals, Performance Optimization
 
 ## Experience Highlights
-- Built and shipped modern web applications with performance and SEO in mind.
-- Specialized in scalable frontend architecture and polished user interfaces.
-- Delivered e-commerce solutions with strong product and conversion considerations.
+- **AIEnterprise Inc. (Feb 2025 – Present)** — Software Engineer
+- **BrandsMart USA** (React.js, Next.js, REST APIs): Owned the Account module (12+ pages) end-to-end, led Authentication and the Product Detail Page, delivered 60% of Checkout, and shipped 800+ user stories with 300+ defects resolved. Earned a Spot Award and early promotion.
+- **FogLifter** (Astro, WordPress): Led a 59-page corporate site rebuild from WordPress to Astro, achieving 90+ Lighthouse scores across all pages.
+- **VSO** (Astro, Ongoing): Independently driving a ground-up website rebuild for a compliance-focused enterprise client — architecture, SEO, accessibility, and deployment.
+- **Allen Brothers** (React.js): Delivered core e-commerce experiences — PDP, Quick View, Category Listing, custom image zoom — for a production storefront.
+- Personal projects: Chat-Sphere (real-time MERN chat app), Vastra Atelier (multi-theme e-commerce UI concept), BMSAlerts (Node.js + Puppeteer automation bot).
 
 ## Contact
 - Portfolio: [Sai Sujan S Portfolio](https://sai-sujan-s-portfolio.onrender.com/)
 - GitHub: [sujan2332](https://github.com/sujan2332)
+- LinkedIn: [sai-sujan-s](https://www.linkedin.com/in/sai-sujan-s/)
 
 ## Useful Links
 - [Portfolio Homepage](https://sai-sujan-s-portfolio.onrender.com/)
 - [GitHub Profile](https://github.com/sujan2332)
+- LinkedIn: [sai-sujan-s](https://www.linkedin.com/in/sai-sujan-s/)

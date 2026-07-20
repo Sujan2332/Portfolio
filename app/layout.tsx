@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.jpg',
-    shortcut: '/favicon.jpg',
-    apple: '/favicon.jpg',
+    icon: '/assets/s.jpeg',
+    shortcut: '/assets/s.jpeg',
+    apple: '/assets/s.jpeg',
   },
   manifest: '/manifest.webmanifest',
   openGraph: {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/assets/s.jpeg',
         width: 555,
         height: 555,
         alt: 'Sai Sujan S portfolio preview',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description:
       'Building high-performance digital experiences with React, Next.js, and Node.js for modern brands and e-commerce products.',
-    images: ['/og-image.jpg'],
+    images: ['/assets/s.jpeg'],
   },
 };
 

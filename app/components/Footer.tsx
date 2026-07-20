@@ -76,7 +76,7 @@ export default function Footer() {
 
         <div className="mt-10 pt-6 border-t border-white/5 text-center">
           <p className="text-xs text-gray-700">
-            &copy; {new Date().getFullYear()} Sai Sujan S. Built with React.js &amp; Tailwind CSS.
+            &copy; {new Date().getFullYear()} Sai Sujan S. Built with Next.js &amp; Tailwind CSS.
           </p>
         </div>
       </div>

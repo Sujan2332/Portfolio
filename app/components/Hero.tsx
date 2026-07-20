@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { ArrowDown, Github,Linkedin, Mail, FileText, ChevronRight } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, FileText, ChevronRight } from 'lucide-react';
 import { useMouseParallax } from '../hooks';
 
 const resumeUrl = '/resume.pdf';
@@ -197,11 +197,13 @@ export default function Hero() {
   const parallaxRef = useMouseParallax();
   const [typed, setTyped] = useState('');
   const roles = [
-    'Full Stack Developer',
-    'Front-end Focused Developer',
-    'React JS Developer',
-    'Next.js Specialist',
-    'E-commerce Developer'
+    'Full Stack Developer (MERN)',
+    'React.js Developer',
+    'Enterprise E-commerce Platform Enginner',
+    'Frontend Systems & Component Architecture Engineer',
+    'JAMstack / Static Site Engineer',
+    'Web Performance & Accessibility Engineer',
+    'Software Engineer'
   ];
 
   useEffect(() => {
@@ -211,7 +213,7 @@ export default function Hero() {
 
     const typeText = () => {
       const currentRole = roles[currentRoleIndex];
-      
+
       if (isDeleting) {
         charIndex--;
       } else {

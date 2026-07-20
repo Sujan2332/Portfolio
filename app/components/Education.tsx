@@ -192,7 +192,7 @@ export default function Education() {
                                         </div>
 
                                         {/* Score badge */}
-                                        <div className="flex flex-wrap items-center gap-3 mb-5">
+                                        <div className="flex flex-wrap items-center w-full sm:w-auto justify-center sm:justify-start gap-3 mb-5">
                                             <div className={`flex items-center gap-2 px-3.5 py-2 rounded-lg ${a.bg} border ${a.border}`}>
                                                 <entry.icon size={14} className={a.text} />
                                                 <span className="text-xs text-gray-400">{entry.label}</span>

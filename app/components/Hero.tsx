@@ -199,7 +199,7 @@ export default function Hero() {
   const roles = [
     'Full Stack Developer (MERN)',
     'React.js Developer',
-    'Enterprise E-commerce Platform Enginner',
+    'Enterprise E-commerce Platform Engineer',
     'Frontend Systems & Component Architecture Engineer',
     'JAMstack / Static Site Engineer',
     'Web Performance & Accessibility Engineer',

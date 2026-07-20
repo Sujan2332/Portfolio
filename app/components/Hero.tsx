@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { ArrowDown, Github, Mail, FileText, ChevronRight } from 'lucide-react';
+import { ArrowDown, Github,Linkedin, Mail, FileText, ChevronRight } from 'lucide-react';
 import { useMouseParallax } from '../hooks';
 
 const resumeUrl = '/resume.pdf';
@@ -196,19 +196,51 @@ function WorkspaceOrb() {
 export default function Hero() {
   const parallaxRef = useMouseParallax();
   const [typed, setTyped] = useState('');
-  const fullText = 'Full Stack Developer';
+  const roles = [
+    'Full Stack Developer',
+    'Front-end Focused Developer',
+    'React JS Developer',
+    'Next.js Specialist',
+    'E-commerce Developer'
+  ];
 
   useEffect(() => {
-    let i = 0;
-    const timer = setInterval(() => {
-      if (i <= fullText.length) {
-        setTyped(fullText.slice(0, i));
-        i++;
+    let currentRoleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const typeText = () => {
+      const currentRole = roles[currentRoleIndex];
+      
+      if (isDeleting) {
+        charIndex--;
       } else {
-        clearInterval(timer);
+        charIndex++;
       }
-    }, 80);
-    return () => clearInterval(timer);
+
+      setTyped(currentRole.slice(0, charIndex));
+
+      // Finished typing a role
+      if (!isDeleting && charIndex === currentRole.length) {
+        // Pause before deleting
+        setTimeout(() => {
+          isDeleting = true;
+          typeText();
+        }, 2000);
+        return;
+      }
+
+      // Finished deleting
+      if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+      }
+
+      const speed = isDeleting ? 50 : 80;
+      setTimeout(typeText, speed);
+    };
+
+    typeText();
   }, []);
 
   const scrollDown = () => {
@@ -241,10 +273,9 @@ export default function Hero() {
 
             {/* Role badge */}
             <div data-depth="0.2">
-              <div className="section-label mb-3">Frontend-Focused Full Stack Engineer</div>
-              <div className="font-mono text-blue-400 text-sm flex items-center gap-2" style={{ fontFamily: "'Fira Code', monospace" }}>
-                <span>{typed}</span>
-                <span className="w-0.5 h-4 bg-blue-400 animate-pulse inline-block" />
+              <div className="section-label mb-1 flex items-center gap-1">
+                <span className="text-sm">{typed}</span>
+                <span className="w-0.5 h-4 bg-blue-400 animate-pulse inline-block self-center" />
               </div>
             </div>
 
@@ -297,7 +328,7 @@ export default function Hero() {
             </div>
 
             {/* Social links */}
-            <div className="flex items-center gap-4" data-depth="0.05">
+            <div className="flex flex-wrap items-center gap-4" data-depth="0.05">
               <a
                 href="https://github.com/sujan2332"
                 target="_blank"
@@ -309,10 +340,13 @@ export default function Hero() {
               </a>
               <span className="w-px h-4 bg-white/10" />
               <a
-                href="mailto:saisujans.dev@gmail.com"
-                className="text-gray-500 hover:text-gray-200 text-sm transition-colors"
+                href="https://www.linkedin.com/in/sai-sujan-s/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-500 hover:text-gray-200 text-sm transition-colors"
               >
-                saisujans.dev@gmail.com
+                <Linkedin size={16}/>
+                linkedin.com/in/sai-sujan-s/
               </a>
             </div>
           </div>
@@ -326,7 +360,7 @@ export default function Hero() {
         {/* Scroll indicator */}
         <button
           onClick={scrollDown}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 hover:text-gray-400 transition-colors animate-float"
+          className="absolute bottom-2 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 hover:text-gray-400 transition-colors animate-floa"
           aria-label="Scroll down"
         >
           <span className="text-xs font-mono tracking-widest uppercase">Scroll</span>

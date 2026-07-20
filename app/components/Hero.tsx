@@ -260,8 +260,8 @@ export default function Hero() {
           style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.6), transparent)', animationDelay: '1.5s' }} />
       </div>
 
-      <div ref={parallaxRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full min-w-0 pt-4 sm:pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center min-h-[80vh] min-w-0">
+      <div ref={parallaxRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full min-w-0 pt-2 md:pt-24 pb-16">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center min-h-[75vh] md:min-h-[80vh] min-w-0">
 
           {/* Left content */}
           <div className="flex flex-col gap-4 sm:gap-6 min-w-0 w-full">
@@ -360,7 +360,7 @@ export default function Hero() {
             <WorkspaceOrb />
           </div>
           {/* Scroll indicator — wrapper keeps centering separate from float transform */}
-          <div className="absolute bottom-2 md:bottom-12 left-1/2 -translate-x-1/2">
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
             <button
               onClick={scrollDown}
               className="flex flex-col items-center gap-2 text-gray-600 hover:text-gray-400 transition-colors animate-float"

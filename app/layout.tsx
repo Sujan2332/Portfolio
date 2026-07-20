@@ -5,7 +5,7 @@ const SITE_URL = 'https://sai-sujan-s-portfolio.onrender.com';
 const SITE_NAME = 'Sai Sujan S Portfolio';
 const TITLE = 'Sai Sujan S — Full Stack Developer | Portfolio';
 const DESCRIPTION =
-  'Sai Sujan S is a full-stack developer building fast, accessible, and conversion-focused digital products with React, Next.js, Node.js, and e-commerce expertise. Explore his portfolio to see how he can help your brand or product succeed online.';
+  'Full Stack Developer specializing in React, Next.js, and e-commerce. Building fast, accessible digital products. View portfolio & projects.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -49,24 +49,22 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: SITE_NAME,
     title: TITLE,
-    description:
-      'Building high-performance digital experiences with React, Next.js, and Node.js for modern brands and e-commerce products.',
+    description: 'Full Stack Developer specializing in React, Next.js, and e-commerce. View my portfolio.',
     url: SITE_URL,
     locale: 'en_US',
     images: [
       {
         url: '/assets/s.jpeg',
-        width: 555,
-        height: 555,
-        alt: 'Sai Sujan S portfolio preview',
+        width: 1200,
+        height: 630,
+        alt: 'Sai Sujan S - Full Stack Developer Portfolio | React, Next.js, E-commerce',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title: TITLE,
-    description:
-      'Building high-performance digital experiences with React, Next.js, and Node.js for modern brands and e-commerce products.',
+    description: 'Full Stack Developer specializing in React, Next.js, and e-commerce. View my portfolio.',
     images: ['/assets/s.jpeg'],
   },
 };

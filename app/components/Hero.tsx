@@ -258,35 +258,37 @@ export default function Hero() {
           style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.6), transparent)', animationDelay: '1.5s' }} />
       </div>
 
-      <div ref={parallaxRef} className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-[80vh]">
+      <div ref={parallaxRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full min-w-0 pt-24 pb-16">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center min-h-[80vh] min-w-0">
 
           {/* Left content */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4 sm:gap-6 min-w-0 w-full">
             {/* Badge */}
-            <div data-depth="0.3" className="inline-flex items-center gap-2 self-start">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full glass border border-green-500/20 text-green-400 text-xs font-medium">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                Available for opportunities
+            <div data-depth="0.3" className="inline-flex items-center gap-2 self-start max-w-full">
+              <div className="flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-full glass border border-green-500/20 text-green-400 text-xs font-medium max-w-full">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse shrink-0" />
+                <span className="max-[469px]:break-words">Available for opportunities</span>
               </div>
             </div>
 
             {/* Role badge */}
-            <div data-depth="0.2">
-              <div className="section-label mb-1 flex items-center gap-1">
-                <span className="text-sm">{typed}</span>
-                <span className="w-0.5 h-4 bg-blue-400 animate-pulse inline-block self-center" />
+            <div data-depth="0.2" className="min-w-0 max-w-full">
+              <div className="section-label mb-1 flex flex-wrap items-center gap-1 min-w-0 max-w-full normal-case !tracking-normal max-[469px]:break-words">
+                <span className="text-xs md:text-sm lg:text-sm  max-[469px]:break-words">{typed}</span>
+                <span className="w-0.5 h-4 bg-blue-400 animate-pulse inline-block self-center shrink-0" />
               </div>
             </div>
 
-            {/* Headline */}
-            <div data-depth="0.15">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight" style={{ fontFamily: "'Syne', sans-serif" }}>
+            {/* Headline — 3 lines above 469px, 2 lines at/below */}
+            <div data-depth="0.15" className="min-w-0 max-w-full">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight max-[469px]:break-words" style={{ fontFamily: "'Syne', sans-serif" }}>
                 <span className="text-gradient-hero">Building </span>
-                <span className="italic-hero text-gradient-blue" style={{ fontSize: '1.05em' }}>High-Performance</span>
+                <span className="italic-hero text-gradient-blue max-[469px]:break-words" style={{ fontSize: '1.05em' }}>High</span>
+                {/* <br className="hidden min-[470px]:block" /> */}
+                <span className="italic-hero text-gradient-blue max-[469px]:break-words" style={{ fontSize: '1.05em' }}>-Performance</span>
                 <br />
                 <span className="text-gradient-hero">Digital </span>
-                <span className="relative inline-block">
+                <span className="relative inline-block max-w-full max-[469px]:break-words">
                   <span className="text-gradient-blue">Experiences</span>
                   <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-blue-500 to-purple-500 opacity-50" />
                 </span>
@@ -294,7 +296,7 @@ export default function Hero() {
             </div>
 
             {/* Subheading */}
-            <p data-depth="0.1" className="text-base md:text-lg text-gray-400 leading-relaxed max-w-lg" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+            <p data-depth="0.1" className="text-base md:text-lg text-gray-400 leading-relaxed max-w-lg min-w-0 max-[469px]:break-words" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
               Full Stack Developer specializing in{' '}
               <em className="italic-accent text-gray-300 not-italic" style={{ fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1em' }}>scalable e-commerce platforms</em>, modern web applications, and{' '}
               <em style={{ fontStyle: 'italic', fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1em' }} className="text-gray-300">pixel-perfect user experiences</em> with{' '}
@@ -328,25 +330,25 @@ export default function Hero() {
             </div>
 
             {/* Social links */}
-            <div className="flex flex-wrap items-center gap-4" data-depth="0.05">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 min-w-0 max-w-full" data-depth="0.05">
               <a
                 href="https://github.com/sujan2332"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-500 hover:text-gray-200 text-sm transition-colors"
+                className="flex items-center gap-2 text-gray-500 hover:text-gray-200 text-sm transition-colors min-w-0 max-[469px]:break-words"
               >
-                <Github size={16} />
-                github.com/sujan2332
+                <Github size={16} className="shrink-0" />
+                <span className="max-[469px]:break-all">github.com/sujan2332</span>
               </a>
-              <span className="w-px h-4 bg-white/10" />
+              <span className="hidden min-[469px]:block w-px h-4 bg-white/10 shrink-0" />
               <a
                 href="https://www.linkedin.com/in/sai-sujan-s/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-500 hover:text-gray-200 text-sm transition-colors"
+                className="flex items-center gap-2 text-gray-500 hover:text-gray-200 text-sm transition-colors min-w-0 max-[469px]:break-words"
               >
-                <Linkedin size={16}/>
-                linkedin.com/in/sai-sujan-s/
+                <Linkedin size={16} className="shrink-0" />
+                <span className="max-[469px]:break-all">linkedin.com/in/sai-sujan-s/</span>
               </a>
             </div>
           </div>
@@ -357,15 +359,17 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <button
-          onClick={scrollDown}
-          className="absolute bottom-2 md:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 hover:text-gray-400 transition-colors animate-floa"
-          aria-label="Scroll down"
-        >
-          <span className="text-xs font-mono tracking-widest uppercase">Scroll</span>
-          <ArrowDown size={16} />
-        </button>
+        {/* Scroll indicator — wrapper keeps centering separate from float transform */}
+        <div className="absolute bottom-2 md:bottom-12 left-1/2 -translate-x-1/2">
+          <button
+            onClick={scrollDown}
+            className="flex flex-col items-center gap-2 text-gray-600 hover:text-gray-400 transition-colors animate-float"
+            aria-label="Scroll down"
+          >
+            <span className="text-xs font-mono tracking-widest uppercase">Scroll</span>
+            <ArrowDown size={16} />
+          </button>
+        </div>
       </div>
     </section>
   );

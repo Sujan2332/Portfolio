@@ -192,7 +192,7 @@ function ProjectCard({ project, onViewDetails }: { project: Project; onViewDetai
             <Icon size={20} style={{ color: project.color }} />
           </div>
         </div>
-        <div className="absolute bottom-4 right-6 flex gap-2">
+        <div className="absolute bottom-4 right-4 smLright-6 flex flex-col sm:flex-row gap-2">
           {project.tech.slice(0, 3).map((t) => (
             <span key={t} className="px-2 py-0.5 text-xs font-mono rounded-md bg-black/40 text-gray-300 border border-white/10">
               {t}

@@ -37,7 +37,7 @@ const education: EducationEntry[] = [
         id: 'pre-degree',
         degree: 'Pre-University & Secondary Education',
         institution: 'St. Francis PU College - Indira Convent High School',
-        graduation: 'Completed June 2020',
+        graduation: 'June 2020',
         label: 'Location',
         value: 'Bengaluru',
         stream: 'PCMC (Physics, Chemistry, Mathematics, Computer Science)',
@@ -123,9 +123,9 @@ export default function Education() {
                 {/* Timeline */}
                 <div className="relative">
                     {/* Vertical line */}
-                    <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px timeline-line" />
+                    <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px timeline-line hidden sm:block" />
 
-                    <div className="pl-16 md:pl-24 space-y-6 md:space-y-8">
+                    <div className="pl-0 sm:pl-16 md:pl-24 space-y-6 md:space-y-8">
                         {education.map((entry, i) => {
                             const Icon = entry.icon;
                             const a = accentMap[entry.accent];
@@ -150,7 +150,7 @@ export default function Education() {
                                         )}
 
                                         {/* Header row */}
-                                        <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+                                        <div className="flex flex-wrap sm:flex-nowrap items items-start justify-between gap-4 mb-6">
                                             <div className="flex items-start gap-3.5">
                                                 <div
                                                     className={`w-11 h-11 rounded-xl flex items-center justify-center shrink-0 ${a.bg} border ${a.border} transition-transform duration-500 group-hover:scale-105`}
@@ -164,10 +164,10 @@ export default function Education() {
                                                     {/* {entry.field && (
                                                         <p className={`text-sm font-medium mt-1 ${a.text}`}>{entry.field}</p>
                                                     )} */}
-                                                    <div className="flex items-center gap-3 mt-2 flex-wrap">
+                                                    <div className="flex flex-wrap items-center flex-column md:flex-row gap-2 md-gap-3 mt-2 flex-wrap">
                                                         <p className={`text-sm font-medium mt-1 ${a.text}`}>{entry.institution}</p>
                                                         {entry.university && (
-                                                            <div className="flex items-center gap-1.5 mt-1">
+                                                            <div className="hidden sm:flex items-center gap-1.5 mt-1">
                                                                 <Building2 size={11} className="text-gray-600" />
                                                                 <span className="text-xs text-gray-500">{entry.university}</span>
                                                             </div>
@@ -177,7 +177,7 @@ export default function Education() {
                                                 </div>
                                             </div>
 
-                                            <div className="flex flex-col items-end gap-2.5">
+                                            <div className="flex max-[514px]:flex-row flex-col sm:flex-col items-center sm:items-end gap-2.5">
                                                 {entry.primary && (
                                                     <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium">
                                                         <Sparkles size={11} />

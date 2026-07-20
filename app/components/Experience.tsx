@@ -122,7 +122,7 @@ export default function Experience() {
           {/* Vertical line */}
           <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px timeline-line" />
 
-          <div className="pl-16 md:pl-24">
+          <div className="md:pl-24">
             {/* Company card */}
             <div className="reveal">
               {/* Timeline dot */}
@@ -157,7 +157,7 @@ export default function Experience() {
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-end gap-2">
+                  <div className="flex flex-col items-center w-full md:w-auto md:items-end gap-2">
                     <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-medium">
                       <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                       Current
@@ -185,14 +185,14 @@ export default function Experience() {
                   {/* Projects timeline */}
                   <div className="relative ml-1">
                     {/* Connecting line */}
-                    <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-blue-500/40 via-purple-500/30 to-transparent" />
+                    <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-blue-500/40 via-purple-500/30 to-transparent hidden md:block" />
 
                     <div className="space-y-5">
                       {visibleProjects.map((project, i) => (
-                        <div key={i} className="relative pl-7">
+                        <div key={i} className="relative pl-0 md:pl-7">
                           {/* Node dot */}
                           <div
-                            className={`absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full border-2 bg-[#0a0a0f] flex items-center justify-center ${project.ongoing ? 'border-green-500' : 'border-blue-500'
+                            className={` absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full border-2 bg-[#0a0a0f] hidden md:flex items-center justify-center ${project.ongoing ? 'border-green-500' : 'border-blue-500'
                               }`}
                           >
                             <div className={`w-1.5 h-1.5 rounded-full ${project.ongoing ? 'bg-green-500' : 'bg-blue-500'}`} />
@@ -201,7 +201,7 @@ export default function Experience() {
                           {/* Project content */}
                           <div className="rounded-xl p-4  bg-white/[0.02] border border-white/5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
                             {/* Name + tag */}
-                            <div className="flex flex-wrap items-center gap-2 mb-2">
+                            <div className="flex flex-wrap md:flex-row flex-col items-center gap-2 mb-2">
                               <h5 className="text-base font-bold text-white">{project.name}</h5>
                               {project.tag && (
                                 <span

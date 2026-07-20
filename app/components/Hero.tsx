@@ -359,9 +359,7 @@ export default function Hero() {
           <div className="relative h-[500px] lg:h-[600px] hidden lg:block">
             <WorkspaceOrb />
           </div>
-        </div>
-
-        {/* Scroll indicator — wrapper keeps centering separate from float transform */}
+          {/* Scroll indicator — wrapper keeps centering separate from float transform */}
         <div className="absolute bottom-2 md:bottom-12 left-1/2 -translate-x-1/2">
           <button
             onClick={scrollDown}
@@ -371,6 +369,7 @@ export default function Hero() {
             <span className="text-xs font-mono tracking-widest uppercase">Scroll</span>
             <ArrowDown size={16} />
           </button>
+        </div>
         </div>
       </div>
     </section>

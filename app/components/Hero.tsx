@@ -260,7 +260,7 @@ export default function Hero() {
           style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.6), transparent)', animationDelay: '1.5s' }} />
       </div>
 
-      <div ref={parallaxRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full min-w-0 pt-2 md:pt-24 pb-16">
+      <div ref={parallaxRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full min-w-0 pt-6 md:pt-28 pb-16">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center min-h-[78vh] md:min-h-[80vh] min-w-0">
 
           {/* Left content */}
@@ -283,7 +283,7 @@ export default function Hero() {
 
             {/* Headline — 3 lines above 469px, 2 lines at/below */}
             <div data-depth="0.15" className="min-w-0 max-w-full">
-              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight max-[469px]:break-words" style={{ fontFamily: "'Syne', sans-serif" }}>
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight max-[469px]:break-words max-w-lg md:max-w-full" style={{ fontFamily: "'Syne', sans-serif" }}>
                 <span className="text-gradient-hero">Building </span>
                 <span className="italic-hero text-gradient-blue max-[469px]:break-words" style={{ fontSize: '1.05em' }}>High</span>
                 {/* <br className="hidden min-[470px]:block" /> */}
@@ -356,7 +356,7 @@ export default function Hero() {
           </div>
 
           {/* Right — workspace */}
-          <div className="relative h-[500px] lg:h-[600px] hidden lg:block">
+          <div className="relative h-[500px] lg:h-[600px] hidden md:block">
             <WorkspaceOrb />
           </div>
           {/* Scroll indicator — wrapper keeps centering separate from float transform */}

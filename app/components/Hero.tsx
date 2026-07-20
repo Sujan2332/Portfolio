@@ -283,7 +283,7 @@ export default function Hero() {
 
             {/* Headline — 3 lines above 469px, 2 lines at/below */}
             <div data-depth="0.15" className="min-w-0 max-w-full">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight max-[469px]:break-words" style={{ fontFamily: "'Syne', sans-serif" }}>
+              <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-black leading-[1.08] tracking-tight max-[469px]:break-words" style={{ fontFamily: "'Syne', sans-serif" }}>
                 <span className="text-gradient-hero">Building </span>
                 <span className="italic-hero text-gradient-blue max-[469px]:break-words" style={{ fontSize: '1.05em' }}>High</span>
                 {/* <br className="hidden min-[470px]:block" /> */}

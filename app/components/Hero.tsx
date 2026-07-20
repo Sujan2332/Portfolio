@@ -311,7 +311,7 @@ export default function Hero() {
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5"
               >
-                What's New
+                What&apos;s New
                 <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <a

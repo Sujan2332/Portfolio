@@ -261,7 +261,7 @@ export default function Hero() {
       </div>
 
       <div ref={parallaxRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full min-w-0 pt-2 md:pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center min-h-[75vh] md:min-h-[80vh] min-w-0">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-8 items-center min-h-[78vh] md:min-h-[80vh] min-w-0">
 
           {/* Left content */}
           <div className="flex flex-col gap-4 sm:gap-6 min-w-0 w-full">

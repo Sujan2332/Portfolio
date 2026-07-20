@@ -4,8 +4,7 @@ import './globals.css';
 const SITE_URL = 'https://sai-sujan-s-portfolio.onrender.com';
 const SITE_NAME = 'Sai Sujan S Portfolio';
 const TITLE = 'Sai Sujan S — Full Stack Developer | Portfolio';
-const DESCRIPTION =
-  'Full Stack Developer specializing in React, Next.js, and e-commerce. Building fast, accessible digital products. View portfolio & projects.';
+const DESCRIPTION ='Sai Sujan S is a Full-Stack Developer with expertise in React, Next.js, TypeScript, and enterprise e-commerce, building scalable, SEO-focused web experiences. View portfolio.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

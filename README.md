@@ -33,7 +33,7 @@ app/
   hooks.ts           — scroll-reveal, counter, and mouse-parallax hooks (client-only)
   components/        — one file per section; each has 'use client' only if it actually needs it
 public/
-  fonts/, favicon.jpg, og-image.jpg, resume.pdf, llms.txt
+  fonts/, favicon.ico, favicon.jpg, og-image.jpg, resume.pdf, llms.txt
 ```
 
 ### Server vs. Client Components

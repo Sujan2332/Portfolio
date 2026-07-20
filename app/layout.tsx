@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/assets/s.jpeg',
-    shortcut: '/assets/s.jpeg',
-    apple: '/assets/s.jpeg',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   manifest: '/manifest.webmanifest',
   openGraph: {

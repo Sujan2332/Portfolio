@@ -4,7 +4,7 @@ import './globals.css';
 const SITE_URL = 'https://sai-sujan-s-portfolio.onrender.com';
 const SITE_NAME = 'Sai Sujan S Portfolio';
 const TITLE = 'Sai Sujan S — Full Stack Developer | Portfolio';
-const DESCRIPTION ='Sai Sujan S is a Full-Stack Developer with expertise in React, Next.js, TypeScript, and enterprise e-commerce, building scalable, SEO-focused web experiences. View portfolio.'
+const DESCRIPTION = 'Sai Sujan S is a Full-Stack Developer with expertise in React, Next.js, TypeScript, and enterprise e-commerce, building scalable, SEO-focused web experiences. View portfolio.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -41,9 +41,13 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
     shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    apple: '/icon-192.png',
   },
   manifest: '/manifest.webmanifest',
   openGraph: {
@@ -54,12 +58,7 @@ export const metadata: Metadata = {
     url: SITE_URL,
     locale: 'en_US',
     images: [
-      {
-        url: '/assets/s.jpeg',
-        width: 1200,
-        height: 630,
-        alt: 'Sai Sujan S - Full Stack Developer Portfolio | React, Next.js, E-commerce',
-      },
+      { url: '/assets/s.jpeg', width: 555, height: 555, alt: 'Sai Sujan S - Full Stack Developer Portfolio' },
     ],
   },
   twitter: {
@@ -84,10 +83,14 @@ const jsonLd = {
       '@id': `${SITE_URL}/#person`,
       '@type': 'Person',
       name: 'Sai Sujan S',
+      alternateName: ['Sai Sujan', 'Sai Sujan S Portfolio'],
       jobTitle: 'Frontend-Focused Full Stack Developer',
       url: SITE_URL,
       image: `${SITE_URL}/og-image.jpg`,
-      sameAs: ['https://github.com/sujan2332'],
+      sameAs: [
+        'https://github.com/sujan2332',
+        'https://www.linkedin.com/in/sai-sujan-s-52bb26211/',
+      ],
       description:
         'Full-stack developer specializing in fast, accessible web experiences, modern React applications, and scalable e-commerce platforms.',
       knowsAbout: [

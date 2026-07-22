@@ -52,6 +52,7 @@ export default function Navbar() {
             aria-label="Sai Sujan S — back to top"
             className="relative group"
           >
+            <span className="sr-only">Sai Sujan S</span>
             <span className="font-mono text-base font-bold text-gradient-blue tracking-wider" style={{ fontFamily: "'Fira Code', monospace" }}>SS</span>
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300" />
           </a>

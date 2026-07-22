@@ -120,17 +120,19 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px timeline-line" />
-
+          {!isMobile && (
+            <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px timeline-line" />
+          )}
           <div className="md:pl-24">
             {/* Company card */}
             <div className="reveal">
               {/* Timeline dot */}
-              <div className="absolute left-3.5 md:left-5.5 w-5 h-5 rounded-full border-2 border-blue-500 bg-[#050508] flex items-center justify-center"
-                style={{ left: '1.375rem', top: '1rem' }}>
-                <div className="w-2 h-2 rounded-full bg-blue-500" />
-              </div>
-
+              {/* {!isMobile && (
+                <div className="absolute left-3.5 md:left-5.5 w-5 h-5 rounded-full border-2 border-blue-500 bg-[#050508] flex items-center justify-center"
+                  style={{ left: '1.375rem', top: '1rem' }}>
+                  <div className="w-2 h-2 rounded-full bg-blue-500" />
+                </div>
+              )} */}
               <div className="glass spotlight-card rounded-2xl p-6 md:p-8 border border-white/5 hover:border-blue-500/20 transition-all duration-300">
                 {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
@@ -185,19 +187,21 @@ export default function Experience() {
                   {/* Projects timeline */}
                   <div className="relative ml-1">
                     {/* Connecting line */}
-                    <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-blue-500/40 via-purple-500/30 to-transparent hidden md:block" />
-
+                    {!isMobile && (
+                      <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-blue-500/40 via-purple-500/30 to-transparent" />
+                    )}
                     <div className="space-y-5">
                       {visibleProjects.map((project, i) => (
                         <div key={i} className="relative pl-0 md:pl-7">
                           {/* Node dot */}
-                          <div
-                            className={` absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full border-2 bg-[#0a0a0f] hidden md:flex items-center justify-center ${project.ongoing ? 'border-green-500' : 'border-blue-500'
-                              }`}
-                          >
-                            <div className={`w-1.5 h-1.5 rounded-full ${project.ongoing ? 'bg-green-500' : 'bg-blue-500'}`} />
-                          </div>
-
+                          {!isMobile && (
+                            <div
+                              className={` absolute left-0 top-1.5 w-3.5 h-3.5 rounded-full border-2 bg-[#0a0a0f] hidden md:flex items-center justify-center ${project.ongoing ? 'border-green-500' : 'border-blue-500'
+                                }`}
+                            >
+                              <div className={`w-1.5 h-1.5 rounded-full ${project.ongoing ? 'bg-green-500' : 'bg-blue-500'}`} />
+                            </div>
+                          )}
                           {/* Project content */}
                           <div className="rounded-xl p-4  bg-white/[0.02] border border-white/5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-500/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
                             {/* Name + tag */}

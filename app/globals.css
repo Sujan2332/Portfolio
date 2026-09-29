@@ -503,6 +503,34 @@
 @media (max-width: 768px) {
   .hide-mobile { display: none !important; }
 }
+
 @media (min-width: 769px) {
   .hide-desktop { display: none !important; }
+}
+
+/* Tape Marquee Animations */
+@keyframes tape-marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes tape-marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+.animate-tape-marquee {
+  animation: tape-marquee 90s linear infinite;
+  display: flex;
+  width: max-content;
+}
+.animate-tape-marquee-reverse {
+  animation: tape-marquee-reverse 90s linear infinite;
+  display: flex;
+  width: max-content;
+}
+.caution-tape-bg {
+  background-color: #fbbf24;
+  color: #000;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
 }

@@ -255,6 +255,32 @@ export default function Projects() {
     <section id="projects" aria-label="Projects" className="relative py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-950/5 to-transparent pointer-events-none" />
 
+      {/* Caution Tape Marquee - Full Section X shape */}
+      <div className="absolute inset-0 z-20 pointer-events-none overflow-hidden flex items-center justify-center opacity-90">
+        {/* Strip 1 */}
+        <div className="absolute w-[250vw] lg:w-[150vw] h-10 md:h-12 caution-tape-bg flex items-center transform -rotate-[35deg] md:-rotate-[25deg] shadow-2xl border-black">
+          <div className="animate-tape-marquee whitespace-nowrap flex text-lg md:text-2xl font-black tracking-widest uppercase items-center">
+            {Array.from({ length: 40 }).map((_, i) => (
+              <div key={i} className="flex items-center h-full">
+                <span className="mx-6 text-black">IN PROGRESS</span>
+                <div className="w-16 h-12 opacity-80" style={{ background: 'repeating-linear-gradient(-45deg, #000, #000 8px, transparent 8px, transparent 16px)' }}></div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Strip 2 */}
+        <div className="absolute w-[250vw] lg:w-[150vw] h-10 md:h-12 caution-tape-bg flex items-center transform rotate-[35deg] md:rotate-[25deg] shadow-2xl border-black">
+          <div className="animate-tape-marquee-reverse whitespace-nowrap flex text-lg md:text-2xl font-black tracking-widest uppercase items-center">
+            {Array.from({ length: 40 }).map((_, i) => (
+              <div key={i} className="flex items-center h-full">
+                <span className="mx-6 text-black">IN PROGRESS</span>
+                <div className="w-16 h-12 opacity-80" style={{ background: 'repeating-linear-gradient(-45deg, #000, #000 8px, transparent 8px, transparent 16px)' }}></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="text-center mb-16 reveal">
           <div className="section-label mb-4">Currently Building</div>
